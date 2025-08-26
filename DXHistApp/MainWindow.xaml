@@ -2,12 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
-        Title="DXHistApp - DevExpress Histogram Demo" Height="600" Width="800"
+        Title="DXHistApp - DevExpress Histogram Demo" 
+        Height="600" 
+        Width="800"
         WindowStartupLocation="CenterScreen">
-
     <Grid>
         <Grid.RowDefinitions>
-
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -20,33 +20,40 @@
             </Grid.RowDefinitions>
 
             <!-- Buttons Row -->
-            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                <Button x:Name="btnShowDesigner" Content="Show Chart Designer" 
-                        Click="BtnShowDesigner_Click" 
+            <StackPanel Grid.Row="0" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Left" 
+                        Margin="0,0,0,10">
+
+                <Button Content="Show Chart Designer" 
+                        Command="{Binding ShowDesignerCommand}"
                         Padding="10,5" 
                         Background="#FF007ACC" 
                         Foreground="White"
                         BorderBrush="#FF005A9E"
                         FontWeight="SemiBold"
                         Margin="0,0,10,0"/>
-                <Button x:Name="btnShowProperties" Content="Show Properties" 
-                        Click="BtnShowProperties_Click" 
+
+                <Button Content="Show Properties" 
+                        Command="{Binding ShowPropertiesCommand}"
                         Padding="10,5" 
                         Background="#FF6F42C1" 
                         Foreground="White"
                         BorderBrush="#FF5A2D91"
                         FontWeight="SemiBold"
                         Margin="0,0,10,0"/>
-                <Button x:Name="btnSaveXml" Content="Save XML" 
-                        Click="BtnSaveXml_Click" 
+
+                <Button Content="Save XML" 
+                        Command="{Binding SaveXmlCommand}"
                         Padding="10,5" 
                         Background="#FF17A2B8" 
                         Foreground="White"
                         BorderBrush="#FF138496"
                         FontWeight="SemiBold"
                         Margin="0,0,10,0"/>
-                <Button x:Name="btnLoadXml" Content="Load XML" 
-                        Click="BtnLoadXml_Click" 
+
+                <Button Content="Load XML" 
+                        Command="{Binding LoadXmlCommand}"
                         Padding="10,5" 
                         Background="#FF6C757D" 
                         Foreground="White"
@@ -56,7 +63,9 @@
         </Grid>
 
         <!-- Chart Control -->
-        <dxc:ChartControl x:Name="chartControl" Grid.Row="1" Margin="10">
+        <dxc:ChartControl x:Name="chartControl" 
+                          Grid.Row="1" 
+                          Margin="10">
             <dxc:ChartControl.Titles>
                 <dxc:Title HorizontalAlignment="Center" 
                            Content="Sample Data Histogram"
