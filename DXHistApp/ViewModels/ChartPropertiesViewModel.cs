@@ -87,7 +87,9 @@ namespace DXHistApp.ViewModels
                     diagram.AxisX.NumericScaleOptions = new CountIntervalNumericScaleOptions()
                     {
                         AggregateFunction = AggregateFunction.Histogram,
-                        Count = 10 // default bin count
+                        Count = diagram.Series.Count > 0 && diagram.Series[0].Points.Count > 0
+                        ? diagram.Series[0].Points.Count
+                        : 10
                     };
 
                 AddObjectProperties(properties, diagram.AxisX.NumericScaleOptions, "Scale Options", "X Axis Scale");
