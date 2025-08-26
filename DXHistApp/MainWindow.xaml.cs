@@ -104,23 +104,6 @@ namespace DXHistApp
         }
     }
 
-    public class DataPoint : INotifyPropertyChanged
-    {
-        private double _value;
-
-        public double Value
-        {
-            get => _value;
-            set
-            {
-                _value = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Value)));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-    }
-
     public class ChartProperty
     {
         public string Name { get; set; }
