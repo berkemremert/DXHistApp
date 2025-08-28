@@ -26,8 +26,8 @@
             <TextBox Text="{Binding EditorValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      MinWidth="150" />
         </DataTemplate>
-		
-	<!-- DataTemplate selector for different property types -->
+
+        <!-- DataTemplate selector for different property types -->
         <viewModels:PropertyEditorTemplateSelector x:Key="PropertyEditorTemplateSelector"
                                                    BooleanTemplate="{StaticResource BooleanPropertyTemplate}"
                                                    EnumTemplate="{StaticResource EnumPropertyTemplate}"
